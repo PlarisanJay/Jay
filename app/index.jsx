@@ -22,7 +22,7 @@ const Home = () => {
   if (loading) {
     return (
       <View style={styles.container}>
-        <ActivityIndicator size="large" />
+        <ActivityIndicator size="large" color="#1a4dac" />
       </View>
     );
   }
@@ -30,18 +30,16 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to Want</Text>
-      <Text style={styles.title1}>Everything you think about, write it on Want</Text>
+      <Text style={styles.subtitle}>Everything you think about, write it on Want</Text>
 
       <View style={styles.buttonRow}>
-        {}
-        <Pressable style={styles.squareButton} onPress={() => router.push("/goals")}>
-          <Ionicons name="eye-outline" size={28} color="white" />
+        <Pressable style={styles.cardButton} onPress={() => router.push("/goals")}>
+          <Ionicons name="eye-outline" size={32} color="white" />
           <Text style={styles.buttonText}>View</Text>
         </Pressable>
 
-        {}
-        <Pressable style={styles.squareButton} onPress={() => router.push("/goals/create")}>
-          <Ionicons name="add-circle-outline" size={28} color="white" />
+        <Pressable style={styles.cardButton} onPress={() => router.push("/goals/create")}>
+          <Ionicons name="add-circle-outline" size={32} color="white" />
           <Text style={styles.buttonText}>Add New</Text>
         </Pressable>
       </View>
@@ -54,39 +52,46 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#e2e0e0ff"
+    backgroundColor: "#f5f7fa",
+    paddingHorizontal: 20,
   },
   title: {
-    
-    marginVertical: 40,
     fontSize: 36,
     fontWeight: "bold",
-  },
-  title1: {
-
-    marginVertical: 20,
-    fontSize: 16,
-    marginTop: -20,
+    color: "#1a4dac",
+    marginBottom: 10,
     textAlign: "center",
+  },
+  subtitle: {
+    fontSize: 16,
+    color: "#555",
+    textAlign: "center",
+    marginBottom: 40,
+    lineHeight: 22,
   },
   buttonRow: {
     flexDirection: "row",
-    marginTop: 30,
+    justifyContent: "center",
   },
-  squareButton: {
-    backgroundColor: "#0f67ccd7",
-    width: 120,
-    height: 120,
-    marginHorizontal: 10,
-    borderRadius: 12,
+  cardButton: {
+    backgroundColor: "#0f67cc",
+    width: 140,
+    height: 140,
+    marginHorizontal: 12,
+    borderRadius: 20,
     alignItems: "center",
     justifyContent: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 5,
   },
   buttonText: {
     color: "white",
-    marginTop: 8,
+    marginTop: 10,
     fontWeight: "bold",
-    fontSize: 14,
+    fontSize: 16,
   },
 });
 

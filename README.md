@@ -1,5 +1,5 @@
 # Scratch Code
-**Creator:** `rapz`  
+**Creator:** `Jay Plarisan`  
 
 Clone features: 
 ```
